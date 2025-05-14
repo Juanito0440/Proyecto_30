@@ -313,7 +313,7 @@ export default function ProfileSection() {
                           <Button
                             onClick={() => {
                               localStorage.clear();
-                              navigate("/login");
+                              navigate("/");
                             }}
                           >
                             

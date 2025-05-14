@@ -13,7 +13,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
-import app from './FirebaseConfig'
+import { auth, provider } from './FirebaseConfig'
 // import fondo from './fondo.jpg'
 import login from './IMG/login.jpg'
 import './css/Login.css'
@@ -36,7 +36,7 @@ const Login = () => {
             .then(({ data }) => {
                 localStorage.setItem('auth', 'yes');
                 localStorage.setItem('rol', data.rol);
-               navigate('/')
+                navigate('/dashboard/default')
             })
             .catch(({ response }) => {
                 const message = typeof response.data === 'string' ? response.data : 'Error al iniciar sesión';
@@ -46,20 +46,17 @@ const Login = () => {
     };
     
 
-    const onGoogleSignIn = async () => {
-        const auth = getAuth(app)
-        const provider = new GoogleAuthProvider()
-
-        try {
-            const result = await signInWithPopup(auth, provider)
-            const user = result.user
-            localStorage.setItem('auth', '"yes"')
-            localStorage.setItem('googleUser', JSON.stringify(user))
-            navigate('/')
-        } catch (error) {
-            console.error('Error en el inicio de sesión con Google:', error)
-        }
+   const onGoogleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      localStorage.setItem('auth', 'yes');
+      localStorage.setItem('googleUser', JSON.stringify(user));
+      navigate('/dashboard/default');
+    } catch (error) {
+      console.error('Error en el inicio de sesión con Google:', error);
     }
+  };
 
     return (
         <Grid

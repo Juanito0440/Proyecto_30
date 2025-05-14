@@ -48,33 +48,77 @@ const Dashboard = Loadable(lazy(() => import ('../views/dashboard/Default/index'
 //   ]
 //
 
+// const MainRoutes = {
+//   path: '/',
+//   element: <MainP />, // Aquí usas el layout principal
+//   children: [
+//     {
+//       path: '/dashboard/default',
+//       element: <Dashboard />
+//     },
+//     {
+//       path: '/usuarios',
+//       element: <Users/>
+      
+//     },
+    
+//     {
+//       path: '/projectList',
+//       element: <Projects />
+//     },
+//     {
+//       path: '/sample-page',
+//       element: <SamplePage />
+//     },
+//     {
+//       path: '/usuarios',
+//       element: <Users />
+//     }
+//   ]
+// };
+
 const MainRoutes = {
   path: '/',
-  element: <MainP />, // Aquí usas el layout principal
+  element: (
+    <RouteController>
+      <MainP />
+    </RouteController>
+  ),
   children: [
     {
-      path: '/dashboard/default',
-      element: <Dashboard />
+      path: 'dashboard/default',
+      element: (
+        <RouteController>
+          <MainP />
+        </RouteController>
+      )
     },
     {
       path: '/usuarios',
-      element: <Users/>
-      
-    },
-    
-    {
-      path: '/projectList',
-      element: <Projects />
+      element: (
+        <RouteController >
+          <Users />
+        </RouteController>
+      )
     },
     {
-      path: '/sample-page',
-      element: <SamplePage />
+      path: 'projectList',
+      element: (
+        <RouteController>
+          <Projects />
+        </RouteController>
+      )
     },
     {
-      path: '/usuarios',
-      element: <Users />
+      path: 'sample-page',
+      element: (
+        <RouteController>
+          <SamplePage />
+        </RouteController>
+      )
     }
   ]
 };
+
 
 export default MainRoutes;
