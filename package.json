@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "berry-material-react-js",
   "version": "4.0.1",
   "private": true,
@@ -33,47 +34,24 @@
     "web-vitals": "4.2.4",
     "yup": "1.4.0"
   },
+=======
+  "name": "serverapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+>>>>>>> 8615de1220f85c779dcd2b1430aab92dd4c4a389
   "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\""
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@eslint/compat": "1.2.3",
-    "@eslint/eslintrc": "3.2.0",
-    "@eslint/js": "9.16.0",
-    "@mui/icons-material": "^7.1.0",
-    "@mui/material": "^7.1.0",
-    "axios": "^1.9.0",
-    "eslint": "9.16.0",
-    "eslint-plugin-jsx-a11y": "6.10.2",
-    "eslint-plugin-react": "7.37.4",
-    "eslint-plugin-react-hooks": "5.2.0",
-    "firebase": "^11.6.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "sass-embedded": "^1.88.0"
+  "author": "Samus",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.7"
   }
 }
