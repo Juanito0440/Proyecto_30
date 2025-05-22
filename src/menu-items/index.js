@@ -1,12 +1,16 @@
-import dashboard from './dashboard';
-import pages from './pages';
-import utilities from './utilities';
-import other from './other';
+// import dashboard from './dashboard';
+// import pages from './pages';
+// import utilities from './utilities';
+// import other from './other';
+// menu-items.js
+import getDashboard from './dashboard'; // O tu archivo del menú de funciones
 
-// ==============================|| MENU ITEMS ||============================== //
-
-const menuItems = {
-  items: [dashboard, pages, utilities, other]
+const getMenuItems = (rol) => {
+  return {
+    items: [
+      getDashboard(rol)
+    ]
+  };
 };
 
-export default menuItems;
+export default getMenuItems;

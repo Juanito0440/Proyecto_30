@@ -1,16 +1,11 @@
-// assets
+// dashboard.js
 import { IconDashboard } from '@tabler/icons-react';
 
-// constant
 const icons = { IconDashboard };
 
-// ==============================|| DASHBOARD MENU ITEMS ||============================== //
-
-const dashboard = {
-  id: 'dashboard',
-  title: 'Funciones',
-  type: 'group',
-  children: [
+const getDashboard = (rol) => {
+  console.log('El rol es:', rol);
+  const children = [
     {
       id: 'default',
       title: 'Proyectos',
@@ -18,25 +13,26 @@ const dashboard = {
       url: '/projectList',
       icon: icons.IconDashboard,
       breadcrumbs: false
-    },
-    {
-      id: 'default',
+    }
+  ];
+
+  if (rol !== 'estudiante' && rol !== 'docente') {
+    children.push({
+      id: 'usuarios',
       title: 'Usuarios',
       type: 'item',
       url: '/usuarios',
       icon: icons.IconDashboard,
       breadcrumbs: false
-    },
-    {
-      id: 'Projects',
-      title: 'Proyectos',
-      type: 'item',
-      url: '/Projects',
-      icon: null,
-      breadcrumbs: false,
-      listStyle: 'none'
-    }
-  ]
+    });
+  }
+
+  return {
+    id: 'dashboard',
+    title: 'Funciones',
+    type: 'group',
+    children
+  };
 };
 
-export default dashboard;
+export default getDashboard;

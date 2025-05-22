@@ -266,7 +266,7 @@ export default function ProfileSection() {
                           <ListItemText
                             primary={
                               <Typography variant="body2">
-                                Account Settings
+                                Configuración de la cuenta
                               </Typography>
                             }
                           />
@@ -287,7 +287,7 @@ export default function ProfileSection() {
                               >
                                 <Grid>
                                   <Typography variant="body2">
-                                    Social Profile
+                                    Perfil
                                   </Typography>
                                 </Grid>
                                 <Grid>
